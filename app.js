@@ -24,7 +24,7 @@ button.addEventListener('click', event => {
             const passVal = document.getElementById('passwordIn').value;
           get(child(dbRef, 'username/'+userVal+'/pass')).then((snapshot) => {
             if (snapshot.exists()) {
-              if(snapshot.val()=="passVal"){
+              if(snapshot.val()==passVal){
                 console.log("User is in!");
               }
               console.log(snapshot.val());
