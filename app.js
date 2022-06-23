@@ -1,38 +1,45 @@
-import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.8.3/firebase-app.js'
-import { getDatabase, ref, child, get, set,push, update } from 'https://www.gstatic.com/firebasejs/9.8.3/firebase-database.js'
+body {
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  height: 100vh;
+}
+#loginBox {
+  width: 80vw;
+  position: absolute;
+  top: 18vh;
+  left: 10vw;
+  background-color: white;
+  height: 55vh;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
-  const firebaseConfig = {
-  apiKey: "AIzaSyCZyWPmFktra6v3pJnuy5mN_FCUYTsVumE",
-  authDomain: "autopark-f61ef.firebaseapp.com",
-  databaseURL: "https://autopark-f61ef-default-rtdb.firebaseio.com",
-  projectId: "autopark-f61ef",
-  storageBucket: "autopark-f61ef.appspot.com",
-  messagingSenderId: "164346234866",
-  appId: "1:164346234866:web:a8fb9a635091dbfe5c8d6b",
-  measurementId: "G-M0KXQNBN1W"
-};
+}
 
-  const app = initializeApp(firebaseConfig);
+#loginHead {
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Poppins', sans-serif;
+  font-family: 'Radio Canada', sans-serif;
+  font-family: 'Raleway', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
+font-size: 5vh;
+align-items: center;
+}
+#logos {
+  position: absolute;
+  top: 40vh;
+  left: 9vw;
+}
 
-  const db = getDatabase(app);
-
-  const button = document.getElementById('submitbt');
-
-button.addEventListener('click', event => {
-            const dbRef = ref(getDatabase());
-            const userVal = document.getElementById('usernameIn').value;
-            const passVal = document.getElementById('passwordIn').value;
-          get(child(dbRef, 'username/'+userVal+'/pass')).then((snapshot) => {
-            if (snapshot.exists()) {
-              if(snapshot.val()==passVal){
-                console.log("User is in!");
-              }
-              console.log(snapshot.val());
-            } else {
-              console.log("No data available");
-            }
-          }).catch((error) => {
-            console.error(error);
-          });
-
-});
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
