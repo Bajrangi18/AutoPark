@@ -1,7 +1,7 @@
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.8.3/firebase-app.js'
-import { getDatabase,ref, child, get } from 'https://www.gstatic.com/firebasejs/9.8.3/firebase-database.js'
+import { getDatabase } from 'https://www.gstatic.com/firebasejs/9.8.3/firebase-database.js'
 
-    const firebaseConfig = {
+  const firebaseConfig = {
   apiKey: "AIzaSyCZyWPmFktra6v3pJnuy5mN_FCUYTsVumE",
   authDomain: "autopark-f61ef.firebaseapp.com",
   databaseURL: "https://autopark-f61ef-default-rtdb.firebaseio.com",
@@ -12,17 +12,12 @@ import { getDatabase,ref, child, get } from 'https://www.gstatic.com/firebasejs/
   measurementId: "G-M0KXQNBN1W"
 };
 
-const app = initializeApp(firebaseConfig);
+  const app = initializeApp(firebaseConfig);
 
-const database = getDatabase(app);
+  const db = const database = getDatabase(app);
 
-const dbRef = ref(getDatabase());
-get(child(dbRef, "username/auth100/pass")).then((snapshot) => {
-  if (snapshot.exists()) {
-    console.log(snapshot.val());
-  } else {
-    console.log("No data available");
-  }
-}).catch((error) => {
-  console.error(error);
+  const button = document.getElementById('submitbt');
+
+button.addEventListener('click', event => {
+  console.log('here');
 });
