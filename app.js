@@ -1,5 +1,5 @@
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.8.3/firebase-app.js'
-import { getDatabase } from 'https://www.gstatic.com/firebasejs/9.8.3/firebase-database.js'
+import { getDatabase,ref, child, get } from 'https://www.gstatic.com/firebasejs/9.8.3/firebase-database.js'
 
     const firebaseConfig = {
   apiKey: "AIzaSyCZyWPmFktra6v3pJnuy5mN_FCUYTsVumE",
@@ -12,6 +12,17 @@ import { getDatabase } from 'https://www.gstatic.com/firebasejs/9.8.3/firebase-d
   measurementId: "G-M0KXQNBN1W"
 };
 
-  const app = initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
 
-  const database = getDatabase(app);
+const database = getDatabase(app);
+
+const dbRef = ref(getDatabase());
+get(child(dbRef, "username/auth100/pass")).then((snapshot) => {
+  if (snapshot.exists()) {
+    console.log(snapshot.val());
+  } else {
+    console.log("No data available");
+  }
+}).catch((error) => {
+  console.error(error);
+});
