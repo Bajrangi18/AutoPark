@@ -2,5 +2,25 @@ body {
   background-image: url('back.png');
   background-size: cover;
 }
+#loginBox {
+  width: 30vw;
+  position: absolute;
+  top: 30vh;
+  left: 35vw;
+  background-color: white;
+  height: 35vh;
+  /* border: 20%; */
+  border-radius: 20px;
+  /* border-radius: 2px; */
+}
 
-
+#loginHead {
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Poppins', sans-serif;
+  font-family: 'Radio Canada', sans-serif;
+  font-family: 'Raleway', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
+font-size: 5vh;
+align-items: center;
+}
