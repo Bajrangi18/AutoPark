@@ -19,5 +19,20 @@ import { getDatabase } from 'https://www.gstatic.com/firebasejs/9.8.3/firebase-d
   const button = document.getElementById('submitbt');
 
 button.addEventListener('click', event => {
-  console.log('here');
+            const dbRef = ref(getDatabase());
+            const userVal = document.getElementById('usernameIn').value;
+            const passVal = document.getElementById('passwordIn').value;
+          get(child(dbRef, 'username/'+userVal+'/pass')).then((snapshot) => {
+            if (snapshot.exists()) {
+              if(snapshot.val()=="passVal"){
+                console.log("User is in!");
+              }
+              console.log(snapshot.val());
+            } else {
+              console.log("No data available");
+            }
+          }).catch((error) => {
+            console.error(error);
+          });
+
 });
