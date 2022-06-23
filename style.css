@@ -1,6 +1,5 @@
 body {
-  background-image: url('back.png');
-  background-size: cover;
+  background-color: white;
 }
 #loginBox {
   width: 30vw;
@@ -9,9 +8,9 @@ body {
   left: 35vw;
   background-color: white;
   height: 35vh;
-  /* border: 20%; */
   border-radius: 20px;
-  /* border-radius: 2px; */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
 }
 
 #loginHead {
