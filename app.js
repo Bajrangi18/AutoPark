@@ -14,7 +14,7 @@ import { getDatabase } from 'https://www.gstatic.com/firebasejs/9.8.3/firebase-d
 
   const app = initializeApp(firebaseConfig);
 
-  const db = const database = getDatabase(app);
+  const db = getDatabase(app);
 
   const button = document.getElementById('submitbt');
 
